@@ -1,4 +1,4 @@
-# RockPaperScissors
+# Rock Paper Scissors Game
 
 An implementation of Rock, Paper, Scissors written in ASP.Net MVC Core using double dispatch pattern.
 
