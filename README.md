@@ -12,7 +12,7 @@ The automated computer strategy is to select a move (rock, paper, scissors) at r
 
 ## Architecture
 
-The UI is presented by an MVC website. The Model in MVC is just a container for user input. 
+The UI is presented by an MVC website. The Model in MVC is just a container for user input.
 The Controller functionality is unit tesed in GameUI.Tests.
 
 The game logic is implemented in the class library GameEngine. GameEngine is unit tesed in GameEngine.Tests
