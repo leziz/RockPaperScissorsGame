@@ -1,0 +1,31 @@
+﻿@using GameUI.Models
+@model GameUIModel
+
+@{
+    ViewData["Title"] = "Welcome to the Rock Paper Scissors Game";
+}
+<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm())
+        {
+            <br /><br />
+           
+            <fieldset>
+                <h3>Please select a move</h3>
+                <label>@Html.RadioButtonFor(m => m.Player1Move, MoveChoice.ROCK) Rock</label><br />
+                <label>@Html.RadioButtonFor(m => m.Player1Move, MoveChoice.PAPER) Paper</label><br />
+                <label>@Html.RadioButtonFor(m => m.Player1Move, MoveChoice.SCISSORS) Scissors</label><br />
+                <h3>or let computer play against itself</h3>
+                <label>@Html.RadioButtonFor(m => m.Player1Move, MoveChoice.RANDOM) Computer</label>
+            </fieldset>
+            <br /><br />
+            <h3>@Model.GameResult</h3>
+            <input type="submit" class="btn-primary btn-lg" value="Play"/>
+        }
+    </div>
+</div>
+
+<div class="row">
+        <div class="col-md-6">
+            <div class="form-group">

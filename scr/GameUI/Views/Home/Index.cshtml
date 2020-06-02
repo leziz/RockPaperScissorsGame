@@ -1,0 +1,49 @@
+﻿@using GameUI.Models
+@model GameUIModel
+
+@{
+    ViewData["Title"] = "Welcome to the Rock Paper Scissors Game";
+}
+<h1>@ViewData["Title"]</h1>
+<br/>
+@using (Html.BeginForm())
+{
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <fieldset>
+                <h3>Player 1</h3><br/>
+                <h5> Please select a move</h5>
+                <label>@Html.RadioButtonFor(model => model.Player1Move, MoveChoice.ROCK) Rock</label><br />
+                <label>@Html.RadioButtonFor(model => model.Player1Move, MoveChoice.PAPER) Paper</label><br />
+                <label>@Html.RadioButtonFor(model => model.Player1Move, MoveChoice.SCISSORS) Scissors</label><br />
+                <h5>or let computer play on your behalf</h5>
+                <label>@Html.RadioButtonFor(model => model.Player1Move, MoveChoice.RANDOM) Computer</label>
+            </fieldset>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <fieldset>
+                <h3>Player 2</h3><br/>
+                <h5> Please select a move</h5>
+                <label>@Html.RadioButtonFor(model => model.Player2Move, MoveChoice.ROCK) Rock</label><br />
+                <label>@Html.RadioButtonFor(model => model.Player2Move, MoveChoice.PAPER) Paper</label><br />
+                <label>@Html.RadioButtonFor(model => model.Player2Move, MoveChoice.SCISSORS) Scissors</label><br />
+                <h5>or let computer play on your behalf</h5>
+                <label>@Html.RadioButtonFor(model => model.Player2Move, MoveChoice.RANDOM) Computer</label>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group">
+        <h3>@Model.GameResult</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group">
+        <input type="submit" class="btn-primary btn-lg" value="Play"/>
+    </div>
+</div>
+}
